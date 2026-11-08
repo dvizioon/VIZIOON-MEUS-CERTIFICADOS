@@ -1,0 +1,828 @@
+{
+  "profile": {
+    "name": "Daniel Estevão",
+    "fullName": "Daniel Estevão Martins Mendes",
+    "role": "Backend Developer",
+    "headline": "Titulação, certificados e formação em um só lugar",
+    "summary": "Baixe comprovantes de escolaridade, históricos e certificados. Útil para RH, Censo da IES e atualização cadastral.",
+    "location": "Brasil",
+    "links": {
+      "lattes": "",
+      "linkedin": "https://www.linkedin.com/in/danielestevaomm",
+      "github": "https://github.com/dvizioon",
+      "website": "https://dvizioon.com"
+    },
+    "ongoing": [
+      {
+        "id": "pos",
+        "kind": "pos",
+        "title": "Especialização em Tecnologia Java",
+        "institution": "UTFPR Campus Cornélio Procópio",
+        "duration": "360 horas",
+        "status": "Em andamento",
+        "note": "Ingresso 2026. Matrícula regular.",
+        "url": "/certificates/pos-java-utfpr-matricula.pdf"
+      },
+      {
+        "id": "ingles",
+        "kind": "ingles",
+        "title": "Inglês",
+        "institution": "Método ACCENT",
+        "logo": "/logos/metodo-accent.png",
+        "duration": "",
+        "level": "",
+        "status": "Em andamento",
+        "note": "Curso em andamento pelo Método ACCENT.",
+        "url": ""
+      }
+    ],
+    "avatar": "/avatar.png",
+    "social": [
+      {
+        "id": "site",
+        "label": "dvizioon.com",
+        "url": "https://dvizioon.com",
+        "icon": "mdi:web"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "url": "https://github.com/dvizioon",
+        "icon": "mdi:github"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/danielestevaomm",
+        "icon": "mdi:linkedin"
+      },
+      {
+        "id": "instagram",
+        "label": "Instagram",
+        "url": "https://instagram.com/daniel_estevaomm",
+        "icon": "mdi:instagram"
+      },
+      {
+        "id": "lattes",
+        "label": "Lattes",
+        "url": "",
+        "icon": "mdi:school-outline"
+      }
+    ],
+    "skills": [
+      {
+        "id": "vite",
+        "label": "Vite",
+        "icon": "simple-icons:vite",
+        "category": "frameworks"
+      },
+      {
+        "id": "nextjs",
+        "label": "Next.js",
+        "icon": "simple-icons:nextdotjs",
+        "category": "frameworks"
+      },
+      {
+        "id": "nodejs",
+        "label": "Node.js",
+        "icon": "simple-icons:nodedotjs",
+        "category": "backend"
+      },
+      {
+        "id": "express",
+        "label": "Express",
+        "icon": "simple-icons:express",
+        "category": "backend"
+      },
+      {
+        "id": "fastify",
+        "label": "Fastify",
+        "icon": "simple-icons:fastify",
+        "category": "backend"
+      },
+      {
+        "id": "laravel",
+        "label": "Laravel",
+        "icon": "simple-icons:laravel",
+        "category": "backend"
+      },
+      {
+        "id": "fastapi",
+        "label": "FastAPI",
+        "icon": "simple-icons:fastapi",
+        "category": "backend"
+      },
+      {
+        "id": "spring",
+        "label": "Spring",
+        "icon": "simple-icons:spring",
+        "category": "backend"
+      },
+      {
+        "id": "javascript",
+        "label": "JavaScript",
+        "icon": "simple-icons:javascript",
+        "category": "linguagens"
+      },
+      {
+        "id": "typescript",
+        "label": "TypeScript",
+        "icon": "simple-icons:typescript",
+        "category": "linguagens"
+      },
+      {
+        "id": "java",
+        "label": "Java",
+        "icon": "simple-icons:openjdk",
+        "category": "linguagens"
+      },
+      {
+        "id": "php",
+        "label": "PHP",
+        "icon": "simple-icons:php",
+        "category": "linguagens"
+      },
+      {
+        "id": "python",
+        "label": "Python",
+        "icon": "simple-icons:python",
+        "category": "linguagens"
+      },
+      {
+        "id": "ubuntu",
+        "label": "Ubuntu",
+        "icon": "simple-icons:ubuntu",
+        "category": "sistemas"
+      },
+      {
+        "id": "q4os",
+        "label": "Q4OS",
+        "icon": "mdi:desktop-classic",
+        "category": "sistemas"
+      },
+      {
+        "id": "fedora",
+        "label": "Fedora",
+        "icon": "simple-icons:fedora",
+        "category": "sistemas"
+      },
+      {
+        "id": "ubuntu-server",
+        "label": "Ubuntu Server",
+        "icon": "mdi:server",
+        "category": "servidores"
+      },
+      {
+        "id": "google-workspace",
+        "label": "Google Workspace",
+        "icon": "simple-icons:google",
+        "category": "servidores"
+      },
+      {
+        "id": "aapanel",
+        "label": "aaPanel",
+        "icon": "mdi:view-dashboard-outline",
+        "category": "devops"
+      },
+      {
+        "id": "haproxy",
+        "label": "HAProxy",
+        "icon": "simple-icons:haproxy",
+        "category": "devops"
+      },
+      {
+        "id": "nginx",
+        "label": "Nginx",
+        "icon": "simple-icons:nginx",
+        "category": "devops"
+      },
+      {
+        "id": "contabo",
+        "label": "Contabo",
+        "icon": "mdi:cloud-outline",
+        "category": "devops"
+      },
+      {
+        "id": "aws",
+        "label": "AWS",
+        "icon": "simple-icons:amazonaws",
+        "category": "devops"
+      },
+      {
+        "id": "traefik",
+        "label": "Traefik",
+        "icon": "simple-icons:traefikproxy",
+        "category": "devops"
+      },
+      {
+        "id": "portainer",
+        "label": "Portainer",
+        "icon": "simple-icons:portainer",
+        "category": "devops"
+      },
+      {
+        "id": "docker",
+        "label": "Docker",
+        "icon": "simple-icons:docker",
+        "category": "devops"
+      },
+      {
+        "id": "docker-swarm",
+        "label": "Docker Swarm",
+        "icon": "mdi:docker",
+        "category": "devops"
+      },
+      {
+        "id": "github",
+        "label": "GitHub",
+        "icon": "simple-icons:github",
+        "category": "cicd"
+      },
+      {
+        "id": "gitlab",
+        "label": "GitLab",
+        "icon": "simple-icons:gitlab",
+        "category": "cicd"
+      },
+      {
+        "id": "coolify",
+        "label": "Coolify",
+        "icon": "mdi:rocket-launch-outline",
+        "category": "cicd"
+      },
+      {
+        "id": "dockploy",
+        "label": "Dockploy",
+        "icon": "mdi:ferry",
+        "category": "cicd"
+      },
+      {
+        "id": "mcp-python",
+        "label": "MCP (Python)",
+        "icon": "mdi:puzzle-outline",
+        "category": "ia"
+      },
+      {
+        "id": "rag",
+        "label": "RAG",
+        "icon": "mdi:brain",
+        "category": "ia"
+      }
+    ]
+  },
+  "certificates": [
+    {
+      "id": "pos-java-utfpr",
+      "title": "Declaração de Matrícula Pós em Java",
+      "institution": "UTFPR",
+      "hours": 360,
+      "category": "declaracao",
+      "featured": true,
+      "priority": 0,
+      "description": "Especialização em Tecnologia Java. UTFPR Campus Cornélio Procópio. Matrícula regular 2026.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/pos-java-utfpr-matricula.pdf"
+        }
+      ]
+    },
+    {
+      "id": "graduacao",
+      "title": "Diploma · Certificado de Graduação",
+      "institution": "Graduação",
+      "hours": null,
+      "category": "titulacao",
+      "featured": true,
+      "priority": 1,
+      "description": "Maior titulação. Comprovante de escolaridade para Censo da IES e atualizações cadastrais.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/graduacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": "atestado-conclusao",
+      "title": "Atestado de Conclusão de Curso",
+      "institution": "Instituição de Ensino",
+      "hours": null,
+      "category": "titulacao",
+      "featured": true,
+      "priority": 2,
+      "description": "Declaração · atestado de conclusão.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/atestado-conclusao.pdf"
+        }
+      ]
+    },
+    {
+      "id": "historico-graduacao",
+      "title": "Histórico Digital da Graduação",
+      "institution": "Graduação",
+      "hours": null,
+      "category": "titulacao",
+      "featured": true,
+      "priority": 3,
+      "description": "Histórico escolar digital.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/historico-graduacao.pdf"
+        }
+      ]
+    },
+    {
+      "id": "formacao-one",
+      "title": "Iniciante em Programação T7 ONE",
+      "institution": "Alura + Oracle",
+      "hours": 72,
+      "category": "formacao",
+      "featured": true,
+      "priority": 10,
+      "description": "Formação oficial ONE.",
+      "verifyUrl": "https://cursos.alura.com.br/user/danielmartinsjob/degree-logica-de-programacao-turma7-one-753048/certificate",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/formacao-one-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/formacao-one-back.pdf"
+        }
+      ]
+    },
+    {
+      "id": "autodesenvolvimento",
+      "title": "Aprender a aprender: técnicas para seu autodesenvolvimento",
+      "institution": "Alura + Oracle",
+      "hours": 8,
+      "category": "curso",
+      "featured": false,
+      "priority": 20,
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/aprender-a-aprender-tecnicas-para-seu-autodesenvolvimento",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/autodesenvolvimento-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/autodesenvolvimento-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One. Carga horária de 8h."
+    },
+    {
+      "id": "logica-js-01",
+      "title": "Lógica de programação: mergulhe em programação com JavaScript",
+      "institution": "Alura + Oracle",
+      "hours": 2,
+      "category": "curso",
+      "featured": false,
+      "priority": 21,
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/logica-programacao-mergulhe-programacao-javascript",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/logica-js-01-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/logica-js-01-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One. Carga horária de 2h."
+    },
+    {
+      "id": "logica-js-02",
+      "title": "Lógica de programação: explore funções e listas",
+      "institution": "Alura + Oracle",
+      "hours": 6,
+      "category": "curso",
+      "featured": false,
+      "priority": 22,
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/logica-programacao-funcoes-listas",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/logica-js-02-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/logica-js-02-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One. Carga horária de 6h."
+    },
+    {
+      "id": "html-css-01",
+      "title": "HTML e CSS (Curso 1)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 23,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/html-css-01-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/html-css-01-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "html-css-02",
+      "title": "HTML e CSS (Curso 2)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 24,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/html-css-02-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/html-css-02-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "html-css-03",
+      "title": "HTML e CSS (Curso 3)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 25,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/html-css-03-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/html-css-03-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "html-css-04",
+      "title": "HTML e CSS (Curso 4)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 26,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/html-css-04-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/html-css-04-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "git-github",
+      "title": "Git e GitHub",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 27,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/git-github-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/git-github-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "chatgpt",
+      "title": "ChatGPT (Curso 1)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 28,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/chatgpt-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/chatgpt-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "linkedin-curso",
+      "title": "LinkedIn (Curso 1)",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 29,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/linkedin-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/linkedin-back.pdf"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "challenges-one",
+      "title": "Challenges ONE",
+      "institution": "Alura + Oracle",
+      "hours": null,
+      "category": "formacao",
+      "featured": false,
+      "priority": 11,
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/challenges-one-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/challenges-one-back.pdf"
+        },
+        {
+          "label": "Insígnia",
+          "path": "/certificates/challenges-one-insignia.png"
+        }
+      ],
+      "description": "Curso da trilha Alura + Oracle One."
+    },
+    {
+      "id": "rocketseat-php",
+      "title": "Curso Online de PHP",
+      "institution": "Rocketseat",
+      "hours": 5,
+      "category": "curso",
+      "featured": true,
+      "priority": 30,
+      "verifyUrl": "https://app.rocketseat.com.br/certificates/62338343-a57a-4949-94ee-04b7b4eff004",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/rocketseat-php.pdf"
+        }
+      ],
+      "description": "Formação prática pela Rocketseat. Carga horária de 5h."
+    },
+    {
+      "id": "nlw-react",
+      "title": "NLW Journey React.js",
+      "institution": "Rocketseat",
+      "hours": null,
+      "category": "evento",
+      "featured": true,
+      "priority": 40,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/nlw-react.pdf"
+        }
+      ],
+      "description": "Formação prática pela Rocketseat."
+    },
+    {
+      "id": "pm3-imersao-design",
+      "title": "Imersão em Design",
+      "institution": "PM3",
+      "hours": 72,
+      "category": "curso",
+      "featured": true,
+      "priority": 31,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/pm3-imersao-design.pdf"
+        }
+      ],
+      "description": "Capacitação em produto e design pela PM3. Carga horária de 72h."
+    },
+    {
+      "id": "pm3-product-manager",
+      "title": "Product Manager",
+      "institution": "PM3",
+      "hours": null,
+      "category": "curso",
+      "featured": false,
+      "priority": 32,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/pm3-product-manager.pdf"
+        }
+      ],
+      "description": "Capacitação em produto e design pela PM3."
+    },
+    {
+      "id": "bradesco-admin-bd",
+      "title": "Administrador de Banco de Dados",
+      "institution": "Fundação Bradesco",
+      "hours": 15,
+      "category": "curso",
+      "featured": true,
+      "priority": 33,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/bradesco-admin-bd.pdf"
+        }
+      ],
+      "description": "Curso da Fundação Bradesco Escola Virtual. Carga horária de 15h."
+    },
+    {
+      "id": "bradesco-modelagem",
+      "title": "Modelagem de Dados",
+      "institution": "Fundação Bradesco",
+      "hours": 8,
+      "category": "curso",
+      "featured": false,
+      "priority": 34,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/bradesco-modelagem.pdf"
+        }
+      ],
+      "description": "Curso da Fundação Bradesco Escola Virtual. Carga horária de 8h."
+    },
+    {
+      "id": "bradesco-implementando-bd",
+      "title": "Implementando Banco de Dados",
+      "institution": "Fundação Bradesco",
+      "hours": 15,
+      "category": "curso",
+      "featured": false,
+      "priority": 35,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/bradesco-implementando-bd.pdf"
+        }
+      ],
+      "description": "Curso da Fundação Bradesco Escola Virtual. Carga horária de 15h."
+    },
+    {
+      "id": "python-intro",
+      "title": "Introdução à Linguagem Python",
+      "institution": "Anhanguera",
+      "hours": 15,
+      "category": "curso",
+      "featured": false,
+      "priority": 36,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/python-intro.pdf"
+        }
+      ],
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h."
+    },
+    {
+      "id": "python-analise",
+      "title": "Introdução à Análise de Dados com Python",
+      "institution": "Anhanguera",
+      "hours": 15,
+      "category": "curso",
+      "featured": false,
+      "priority": 37,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/python-analise.pdf"
+        }
+      ],
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h."
+    },
+    {
+      "id": "python-estruturas",
+      "title": "Estruturas de Dados em Python",
+      "institution": "Anhanguera",
+      "hours": 10,
+      "category": "curso",
+      "featured": false,
+      "priority": 38,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/python-estruturas.pdf"
+        }
+      ],
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 10h."
+    },
+    {
+      "id": "python-linguagem",
+      "title": "Linguagem de Programação Python Básico",
+      "institution": "Fundação Bradesco",
+      "hours": 18,
+      "category": "curso",
+      "featured": true,
+      "priority": 39,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/python-linguagem.pdf"
+        }
+      ],
+      "description": "Fundação Bradesco Escola Virtual. Autoinstrucional."
+    },
+    {
+      "id": "kivy-python",
+      "title": "Kivy com Python",
+      "institution": "Fundação Bradesco",
+      "hours": 10,
+      "category": "curso",
+      "featured": false,
+      "priority": 41,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/kivy-python.pdf"
+        }
+      ],
+      "description": "Fundação Bradesco Escola Virtual."
+    },
+    {
+      "id": "android-studio",
+      "title": "Aplicações Mobile com Android Studio",
+      "institution": "Fundação Bradesco",
+      "hours": 15,
+      "category": "curso",
+      "featured": false,
+      "priority": 42,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/android-studio.pdf"
+        }
+      ],
+      "description": "Fundação Bradesco Escola Virtual."
+    },
+    {
+      "id": "snct",
+      "title": "Semana Nacional de Ciência e Tecnologia",
+      "institution": "SNCT",
+      "hours": 30,
+      "category": "evento",
+      "featured": true,
+      "priority": 43,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/snct.pdf"
+        }
+      ],
+      "description": "Participação na Semana Nacional de Ciência e Tecnologia. Carga horária de 30h."
+    },
+    {
+      "id": "naf-comex",
+      "title": "NAF COMEX",
+      "institution": "NAF COMEX",
+      "hours": null,
+      "category": "evento",
+      "featured": false,
+      "priority": 44,
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/naf-comex.pdf"
+        }
+      ],
+      "description": "Atividade e certificado do NAF COMEX."
+    }
+  ]
+}

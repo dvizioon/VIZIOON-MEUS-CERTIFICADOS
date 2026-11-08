@@ -22,7 +22,37 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "security": {
+        "recommended": true,
+        "noBlankTarget": "error",
+        "noDangerouslySetInnerHtml": "error",
+        "noDangerouslySetInnerHtmlWithChildren": "error",
+        "noGlobalEval": "error",
+        "noSecrets": "off"
+      },
+      "performance": {
+        "recommended": true,
+        "noAccumulatingSpread": "error",
+        "noAwaitInLoops": "warn",
+        "noBarrelFile": "off",
+        "noDelete": "warn",
+        "noImgElement": "warn",
+        "noDynamicNamespaceImportAccess": "warn"
+      },
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "warn",
+        "useHookAtTopLevel": "error"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "warn"
+      },
+      "a11y": {
+        "recommended": true
+      }
     },
     "domains": {
       "next": "recommended",
@@ -35,5 +65,41 @@
         "organizeImports": "on"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "src/components/CircularCarousel.jsx",
+        "src/components/CircularCarousel.css",
+        "src/components/GradientASCII.jsx",
+        "src/components/GradientASCII.css",
+        "src/components/Lanyard.jsx",
+        "src/components/Lanyard.css",
+        "src/components/SplitText.tsx",
+        "src/components/ui/**"
+      ],
+      "linter": {
+        "rules": {
+          "a11y": {
+            "recommended": false
+          },
+          "correctness": {
+            "useExhaustiveDependencies": "off",
+            "useHookAtTopLevel": "off"
+          },
+          "performance": {
+            "noImgElement": "off"
+          },
+          "suspicious": {
+            "noArrayIndexKey": "off",
+            "noAssignInExpressions": "off",
+            "useIterableCallbackReturn": "off"
+          },
+          "complexity": {
+            "useOptionalChain": "off"
+          }
+        }
+      }
+    }
+  ]
 }

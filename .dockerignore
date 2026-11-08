@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+.env
+.env*.local
+docker/.env
+*.md
+AGENTS.md
+.cursor
+.vscode
+.idea
+coverage
+tsconfig.tsbuildinfo
+next-env.d.ts
