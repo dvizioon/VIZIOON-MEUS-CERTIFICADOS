@@ -30,21 +30,26 @@ function OngoingCard({ item }: { item: Ongoing }) {
   return (
     <article className="rounded-2xl border border-border bg-card p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between gap-2">
-        {item.logo ? (
-          <span className="relative size-12 shrink-0 overflow-visible">
+        <span
+          className={
+            item.logo
+              ? "flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-border bg-white"
+              : "flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md bg-primary/10 text-primary"
+          }
+        >
+          {item.logo ? (
+            // biome-ignore lint/performance/noImgElement: logo local
             <img
               src={item.logo}
               alt=""
-              width={72}
-              height={72}
-              className="absolute top-1/2 left-1/2 size-[4.5rem] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain"
+              width={40}
+              height={40}
+              className="size-10 object-contain"
             />
-          </span>
-        ) : (
-          <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+          ) : (
             <Icon icon={KIND_ICON[item.kind]} width={22} height={22} />
-          </span>
-        )}
+          )}
+        </span>
         <Badge variant="secondary">{item.status}</Badge>
       </div>
       <p className="text-sm font-semibold text-primary">

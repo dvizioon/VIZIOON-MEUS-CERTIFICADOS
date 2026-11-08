@@ -211,16 +211,18 @@ export function CertificateVault({
                   >
                     <div className="flex shrink-0 gap-1.5">
                       {group.institution.logos.map((logo) => (
-                        // SVG local: <img> evita config extra do next/image
-                        // biome-ignore lint/performance/noImgElement: logos SVG locais
-                        <img
+                        <span
                           key={logo}
-                          src={logo}
-                          alt=""
-                          width={48}
-                          height={48}
-                          className="size-12 shrink-0 rounded-xl border border-border bg-white object-contain p-1.5"
-                        />
+                          className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-border bg-white"
+                        >
+                          <img
+                            src={logo}
+                            alt=""
+                            width={40}
+                            height={40}
+                            className="size-10 object-contain"
+                          />
+                        </span>
                       ))}
                     </div>
                     <div className="min-w-0 flex-1">
