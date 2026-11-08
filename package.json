@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --hostname ${HOSTNAME:-0.0.0.0} --port ${PORT:-5560}",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --hostname ${HOSTNAME:-0.0.0.0} --port ${PORT:-5560}",
     "lint": "biome check",
     "format": "biome format --write",
     "previews": "bash scripts/generate-previews.sh",
