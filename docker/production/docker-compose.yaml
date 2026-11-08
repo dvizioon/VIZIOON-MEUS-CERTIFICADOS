@@ -9,6 +9,9 @@ services:
         APP_ENV: ${APP_ENV:-production}
     container_name: vizioon-meus-certificados
     restart: unless-stopped
+    mem_limit: ${MEM_LIMIT:-512m}
+    mem_reservation: ${MEM_RESERVATION:-128m}
+    cpus: ${CPUS:-1.0}
     env_file:
       - ../.env
     environment:

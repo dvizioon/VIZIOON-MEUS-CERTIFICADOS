@@ -13,6 +13,8 @@ Pra tagar `vizioon-meus-certificados`:
 
 Container name no painel também pode ser `vizioon-meus-certificados`. Grave as env no painel. Não envie o `.env`.
 
+Imagem: multi-stage Bun Alpine → Node Alpine standalone (sem `node_modules` da build). O grosso é `public/certificates` (~30MB de PDF). Compose: `mem_limit` 512m / `cpus` 1.0; rede bridge padrão, sem `networks:` custom.
+
 ```bash
 cd docker
 bash production/deploy.sh

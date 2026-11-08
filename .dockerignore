@@ -5,6 +5,11 @@ node_modules
 .env
 .env*.local
 docker/.env
+docker/development
+docker/production
+docker/scripts
+docker/deploy.sh
+docker/README.md
 *.md
 AGENTS.md
 .cursor
@@ -12,5 +17,9 @@ AGENTS.md
 .idea
 coverage
 test
+scripts
 tsconfig.tsbuildinfo
+*.tsbuildinfo
 next-env.d.ts
+biome.json
+components.json
