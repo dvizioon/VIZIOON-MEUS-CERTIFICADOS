@@ -138,7 +138,7 @@ export function primaryFile(cert: Certificate) {
 }
 
 export function downloadName(path: string) {
-  return path.split("/").pop() ?? "certificado.pdf";
+  return path.split("/").pop() || "certificado.pdf";
 }
 
 export type InstitutionGroup = {
