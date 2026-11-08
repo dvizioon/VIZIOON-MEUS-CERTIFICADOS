@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: "Daniel Estevão | Certificados",
   description:
     "Arquivo público de titulação, declarações e certificados de Daniel Estevão Martins Mendes.",
+  applicationName: "VizioonCertificados",
+  icons: {
+    icon: [
+      { url: "/icon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "512x512", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
