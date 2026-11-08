@@ -11,5 +11,6 @@ AGENTS.md
 .vscode
 .idea
 coverage
+test
 tsconfig.tsbuildinfo
 next-env.d.ts

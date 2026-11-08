@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { describe, expect, test } from "bun:test";
 import {
   SKILL_CATEGORY_LABELS,
@@ -8,7 +9,7 @@ import {
   previewFor,
 } from "@/lib/portfolio";
 
-const publicDir = join(import.meta.dir, "../public");
+const publicDir = join(dirname(fileURLToPath(import.meta.url)), "../public");
 const CATEGORIES = new Set([
   "titulacao",
   "formacao",
