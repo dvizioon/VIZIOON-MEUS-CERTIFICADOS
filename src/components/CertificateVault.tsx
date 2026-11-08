@@ -133,32 +133,36 @@ export function CertificateVault({
                       key === "todos" ? "Todos os documentos" : SHELF_HINTS[key]
                     }
                     className={cn(
-                      "flex min-h-[4.75rem] flex-col items-start gap-1.5 rounded-xl border px-3 py-3 text-left transition",
+                      "relative flex min-h-[5.25rem] flex-col items-start justify-between overflow-hidden rounded-xl border px-3 py-3 text-left transition",
                       active
                         ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/25"
                         : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-primary/5",
                     )}
                     onClick={() => setShelf(key)}
                   >
-                    <span className="flex w-full items-center justify-between gap-2">
-                      <Icon
-                        icon={SHELF_ICONS[key]}
-                        width={24}
-                        height={24}
-                        className={active ? "opacity-100" : "text-primary"}
-                      />
-                      <span
-                        className={cn(
-                          "text-sm font-bold tabular-nums",
-                          active
-                            ? "text-primary-foreground"
-                            : "text-muted-foreground",
-                        )}
-                      >
-                        {shelfCounts[key]}
-                      </span>
+                    <Icon
+                      icon={SHELF_ICONS[key]}
+                      width={88}
+                      height={88}
+                      aria-hidden
+                      className={cn(
+                        "pointer-events-none absolute -right-3 -bottom-3 rotate-[-8deg]",
+                        active
+                          ? "text-primary-foreground/25"
+                          : "text-primary/20",
+                      )}
+                    />
+                    <span
+                      className={cn(
+                        "relative z-10 text-sm font-bold tabular-nums",
+                        active
+                          ? "text-primary-foreground"
+                          : "text-muted-foreground",
+                      )}
+                    >
+                      {shelfCounts[key]}
                     </span>
-                    <span className="text-sm leading-snug font-bold sm:text-[0.95rem]">
+                    <span className="relative z-10 pr-8 text-sm leading-snug font-bold sm:text-[0.95rem]">
                       {SHELF_LABELS[key]}
                     </span>
                   </button>
@@ -213,9 +217,9 @@ export function CertificateVault({
                           key={logo}
                           src={logo}
                           alt=""
-                          width={44}
-                          height={44}
-                          className="size-11 rounded-xl border border-border bg-white object-contain p-1"
+                          width={48}
+                          height={48}
+                          className="size-12 shrink-0 rounded-xl border border-border bg-white object-contain p-1.5"
                         />
                       ))}
                     </div>

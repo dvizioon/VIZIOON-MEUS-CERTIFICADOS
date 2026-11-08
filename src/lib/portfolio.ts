@@ -117,7 +117,7 @@ export const SHELF_LABELS: Record<BrowseShelf | "todos", string> = {
   todos: "Todos",
   academica: "Formação & especializações",
   tecnica: "Técnicas & avançadas",
-  curta: "Workshops & curtos",
+  curta: "Workshops & cursos curtos",
 };
 
 export const SHELF_HINTS: Record<BrowseShelf, string> = {
@@ -175,6 +175,16 @@ export function previewFor(filePath: string) {
 
 export function primaryFile(cert: Certificate) {
   return cert.files[0];
+}
+
+export function frontFile(cert: Certificate) {
+  return (
+    cert.files.find((f) => /^frente$/i.test(f.label)) ?? cert.files[0]
+  );
+}
+
+export function backFile(cert: Certificate) {
+  return cert.files.find((f) => /^verso$/i.test(f.label));
 }
 
 export function downloadName(path: string) {

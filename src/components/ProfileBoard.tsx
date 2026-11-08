@@ -36,9 +36,9 @@ function OngoingCard({ item }: { item: Ongoing }) {
           <img
             src={item.logo}
             alt=""
-            width={44}
-            height={44}
-            className="size-11 rounded-xl border border-border bg-black object-contain p-1"
+            width={48}
+            height={48}
+            className="size-12 shrink-0 rounded-xl border border-border bg-black object-contain p-1.5"
           />
         ) : (
           <span className="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">

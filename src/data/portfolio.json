@@ -28,7 +28,7 @@
         "kind": "ingles",
         "title": "Inglês",
         "institution": "Método ACCENT",
-        "logo": "/logos/metodo-accent.png",
+        "logo": "/logos/metodo-accent.svg",
         "duration": "",
         "level": "",
         "status": "Em andamento",
@@ -293,6 +293,24 @@
         "category": "cicd"
       },
       {
+        "id": "roboflow",
+        "label": "Roboflow",
+        "icon": "simple-icons:roboflow",
+        "category": "ia"
+      },
+      {
+        "id": "yolo",
+        "label": "YOLO",
+        "icon": "mdi:eye-outline",
+        "category": "ia"
+      },
+      {
+        "id": "mediapipe",
+        "label": "MediaPipe",
+        "icon": "simple-icons:google",
+        "category": "ia"
+      },
+      {
         "id": "mcp-python",
         "label": "MCP (Python)",
         "icon": "mdi:puzzle-outline",
@@ -302,6 +320,18 @@
         "id": "rag",
         "label": "RAG",
         "icon": "mdi:brain",
+        "category": "ia"
+      },
+      {
+        "id": "qdrant",
+        "label": "Qdrant",
+        "icon": "simple-icons:qdrant",
+        "category": "ia"
+      },
+      {
+        "id": "chromadb",
+        "label": "ChromaDB",
+        "icon": "mdi:database-outline",
         "category": "ia"
       }
     ]

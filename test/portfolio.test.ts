@@ -2,8 +2,10 @@ import { describe, expect, test } from "bun:test";
 import {
   CATEGORY_LABELS,
   browseShelf,
+  backFile,
   downloadName,
   featuredCertificates,
+  frontFile,
   groupByInstitution,
   previewFor,
   primaryFile,
@@ -42,6 +44,19 @@ describe("primaryFile", () => {
     const cert = data.certificates.find((c) => c.files.length > 0);
     expect(cert).toBeDefined();
     expect(primaryFile(cert!)).toEqual(cert!.files[0]);
+  });
+});
+
+describe("frontFile / backFile", () => {
+  test("pega frente e verso pelo label", () => {
+    const cert = data.certificates.find(
+      (c) =>
+        c.files.some((f) => f.label === "Frente") &&
+        c.files.some((f) => f.label === "Verso"),
+    );
+    expect(cert).toBeDefined();
+    expect(frontFile(cert!)?.label).toBe("Frente");
+    expect(backFile(cert!)?.label).toBe("Verso");
   });
 });
 
