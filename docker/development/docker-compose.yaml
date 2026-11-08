@@ -1,12 +1,13 @@
 services:
   app:
+    image: vizioon-meus-certificados:dev
     build:
       context: ../..
       dockerfile: docker/Dockerfile
       args:
         APP_PORT: ${PORT:-5560}
         APP_ENV: ${APP_ENV:-development}
-    container_name: certificados-daniel
+    container_name: vizioon-meus-certificados
     restart: unless-stopped
     env_file:
       - ../.env

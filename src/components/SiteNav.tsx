@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 
 const LINKS = [
   { href: "#skills", label: "Skills" },
-  { href: "#titulacao", label: "Titulação" },
-  { href: "#certificados", label: "Certificados" },
+  { href: "#titulacao", label: "Destaques" },
+  { href: "#certificados", label: "Baixar" },
   { href: "#perfil", label: "Perfil" },
 ] as const;
 

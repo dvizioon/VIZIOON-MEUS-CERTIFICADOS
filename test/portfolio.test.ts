@@ -1,11 +1,13 @@
 import { describe, expect, test } from "bun:test";
 import {
   CATEGORY_LABELS,
+  browseShelf,
   downloadName,
   featuredCertificates,
   groupByInstitution,
   previewFor,
   primaryFile,
+  SHELF_LABELS,
   sortedCertificates,
   data,
 } from "@/lib/portfolio";
@@ -92,6 +94,27 @@ describe("CATEGORY_LABELS", () => {
       "declaracao",
     ] as const) {
       expect(CATEGORY_LABELS[key].length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe("browseShelf", () => {
+  test("particiona todos os certificados nas 3 abas", () => {
+    const counts = { academica: 0, tecnica: 0, curta: 0 };
+    for (const cert of data.certificates) {
+      counts[browseShelf(cert)] += 1;
+    }
+    expect(counts.academica).toBeGreaterThan(0);
+    expect(counts.tecnica).toBeGreaterThan(0);
+    expect(counts.curta).toBeGreaterThan(0);
+    expect(counts.academica + counts.tecnica + counts.curta).toBe(
+      data.certificates.length,
+    );
+  });
+
+  test("rótulos das abas existem", () => {
+    for (const key of ["todos", "academica", "tecnica", "curta"] as const) {
+      expect(SHELF_LABELS[key].length).toBeGreaterThan(0);
     }
   });
 });

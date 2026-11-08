@@ -1,5 +1,6 @@
 "use client";
 
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -7,12 +8,15 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   CATEGORY_LABELS,
-  type CertCategory,
+  type BrowseShelf,
   type Certificate,
+  browseShelf,
   downloadName,
   groupByInstitution,
   previewFor,
   primaryFile,
+  SHELF_HINTS,
+  SHELF_LABELS,
 } from "@/lib/portfolio";
 import { cn } from "@/lib/utils";
 import { FeaturedCarousel } from "./FeaturedCarousel";
@@ -21,14 +25,19 @@ import { PreviewModal } from "./PreviewModal";
 import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
-const FILTERS: Array<CertCategory | "todos"> = [
+const SHELVES: Array<BrowseShelf | "todos"> = [
   "todos",
-  "titulacao",
-  "declaracao",
-  "formacao",
-  "curso",
-  "evento",
+  "academica",
+  "tecnica",
+  "curta",
 ];
+
+const SHELF_ICONS: Record<BrowseShelf | "todos", string> = {
+  todos: "mdi:folder-multiple-outline",
+  academica: "mdi:school-outline",
+  tecnica: "mdi:certificate-outline",
+  curta: "mdi:lightning-bolt-outline",
+};
 
 export function CertificateVault({
   featured,
@@ -38,14 +47,14 @@ export function CertificateVault({
   items: Certificate[];
 }) {
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<CertCategory | "todos">("todos");
+  const [shelf, setShelf] = useState<BrowseShelf | "todos">("academica");
   const [selected, setSelected] = useState<Certificate | null>(null);
   const [openOrgs, setOpenOrgs] = useState<Record<string, boolean>>({});
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return items.filter((item) => {
-      if (filter !== "todos" && item.category !== filter) return false;
+      if (shelf !== "todos" && browseShelf(item) !== shelf) return false;
       if (!q) return true;
       return (
         item.title.toLowerCase().includes(q) ||
@@ -53,9 +62,21 @@ export function CertificateVault({
         (item.description?.toLowerCase().includes(q) ?? false)
       );
     });
-  }, [items, query, filter]);
+  }, [items, query, shelf]);
 
   const groups = useMemo(() => groupByInstitution(filtered), [filtered]);
+
+  const shelfCounts = useMemo(() => {
+    const counts: Record<BrowseShelf | "todos", number> = {
+      todos: items.length,
+      academica: 0,
+      tecnica: 0,
+      curta: 0,
+    };
+    for (const item of items) counts[browseShelf(item)] += 1;
+    return counts;
+  }, [items]);
+
   const isOpen = (id: string) => openOrgs[id] ?? true;
   const toggleOrg = (id: string) => {
     setOpenOrgs((prev) => ({ ...prev, [id]: !(prev[id] ?? true) }));
@@ -80,14 +101,80 @@ export function CertificateVault({
 
       <section id="certificados" className="pt-14">
         <Reveal>
-          <SectionHead eyebrow="Arquivo" title="Certificados por instituição">
-            Clique na instituição para recolher ou expandir.
+          <SectionHead eyebrow="Arquivo" title="Baixar por tipo de formação">
+            Toque numa aba pra filtrar. Depois abra a instituição e baixe o
+            PDF.
           </SectionHead>
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="sticky top-3 z-20 mb-4 flex flex-col gap-3 rounded-2xl border border-border bg-card/95 p-3 shadow-md backdrop-blur-md md:flex-row md:items-center">
-            <label htmlFor="cert-search" className="min-w-0 flex-1">
+          <div className="sticky top-3 z-20 mb-4 flex flex-col gap-3 rounded-2xl border border-primary/25 bg-card/95 p-3.5 shadow-[0_12px_36px_rgba(37,99,235,0.12)] ring-1 ring-primary/15 backdrop-blur-md">
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-[0.7rem] font-bold tracking-[0.14em] text-primary uppercase">
+                Navegue pelas abas
+              </p>
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-primary">
+                {filtered.length} doc{filtered.length === 1 ? "" : "s"}
+              </span>
+            </div>
+
+            <div
+              className="grid grid-cols-2 gap-2 sm:grid-cols-4"
+              role="tablist"
+              aria-label="Tipo de formação"
+            >
+              {SHELVES.map((key) => {
+                const active = shelf === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={active}
+                    title={
+                      key === "todos" ? "Todos os documentos" : SHELF_HINTS[key]
+                    }
+                    className={cn(
+                      "flex min-h-[4.25rem] flex-col items-start gap-1 rounded-2xl border px-3 py-2.5 text-left transition",
+                      active
+                        ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/25"
+                        : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-primary/5",
+                    )}
+                    onClick={() => setShelf(key)}
+                  >
+                    <span className="flex w-full items-center justify-between gap-2">
+                      <Icon
+                        icon={SHELF_ICONS[key]}
+                        width={22}
+                        height={22}
+                        className={active ? "opacity-100" : "text-primary"}
+                      />
+                      <span
+                        className={cn(
+                          "rounded-full px-2 py-0.5 text-[0.65rem] font-bold tabular-nums",
+                          active
+                            ? "bg-white/20 text-primary-foreground"
+                            : "bg-muted text-muted-foreground",
+                        )}
+                      >
+                        {shelfCounts[key]}
+                      </span>
+                    </span>
+                    <span className="text-[0.78rem] leading-tight font-bold sm:text-[0.82rem]">
+                      {SHELF_LABELS[key]}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            <p className="text-xs text-muted-foreground">
+              {shelf === "todos"
+                ? "Mostrando todos. Escolha uma aba pra achar mais rápido o que baixar."
+                : SHELF_HINTS[shelf]}
+            </p>
+
+            <label htmlFor="cert-search" className="min-w-0">
               <span className="sr-only">Buscar certificados</span>
               <Input
                 id="cert-search"
@@ -98,32 +185,6 @@ export function CertificateVault({
                 className="h-10 rounded-full bg-card"
               />
             </label>
-            <div
-              className="flex flex-wrap gap-1.5"
-              role="tablist"
-              aria-label="Categorias"
-            >
-              {FILTERS.map((key) => {
-                const active = filter === key;
-                return (
-                  <button
-                    key={key}
-                    type="button"
-                    role="tab"
-                    aria-selected={active}
-                    className={cn(
-                      "rounded-full px-3 py-1.5 text-xs font-semibold transition",
-                      active
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary",
-                    )}
-                    onClick={() => setFilter(key)}
-                  >
-                    {CATEGORY_LABELS[key]}
-                  </button>
-                );
-              })}
-            </div>
           </div>
         </Reveal>
 

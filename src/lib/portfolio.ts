@@ -104,6 +104,40 @@ export const CATEGORY_LABELS: Record<CertCategory | "todos", string> = {
   declaracao: "Declarações",
 };
 
+/** Abas de navegação pra RH / visitante baixar com clareza. */
+export type BrowseShelf = "academica" | "tecnica" | "curta";
+
+export const SHELF_LABELS: Record<BrowseShelf | "todos", string> = {
+  todos: "Todos",
+  academica: "Formação & especializações",
+  tecnica: "Técnicas & avançadas",
+  curta: "Workshops & curtos",
+};
+
+export const SHELF_HINTS: Record<BrowseShelf, string> = {
+  academica: "Graduação, pós, diploma, histórico e declarações oficiais.",
+  tecnica: "Formações densas e cursos com carga maior (40h+).",
+  curta: "Cursos curtos, workshops, maratonas e eventos.",
+};
+
+/** shortcut: 40h separa técnico de curto; subir se aparecerem cursos de 600h+ na aba técnica */
+const DENSE_HOURS = 40;
+
+export function browseShelf(cert: Certificate): BrowseShelf {
+  if (cert.category === "titulacao" || cert.category === "declaracao") {
+    return "academica";
+  }
+  if (cert.category === "formacao") return "tecnica";
+  if (
+    cert.category === "curso" &&
+    cert.hours != null &&
+    cert.hours >= DENSE_HOURS
+  ) {
+    return "tecnica";
+  }
+  return "curta";
+}
+
 export const ONGOING_LABELS: Record<OngoingKind, string> = {
   pos: "Pós-graduação",
   ingles: "Inglês",
