@@ -31,16 +31,17 @@ function OngoingCard({ item }: { item: Ongoing }) {
     <article className="rounded-2xl border border-border bg-card p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between gap-2">
         {item.logo ? (
-          // biome-ignore lint/performance/noImgElement: logo local do Método ACCENT
-          <img
-            src={item.logo}
-            alt=""
-            width={180}
-            height={60}
-            className="h-14 w-[11.5rem] shrink-0 rounded-xl border border-border bg-black object-contain object-center p-1.5"
-          />
+          <span className="relative size-12 shrink-0 overflow-visible">
+            <img
+              src={item.logo}
+              alt=""
+              width={72}
+              height={72}
+              className="absolute top-1/2 left-1/2 size-[4.5rem] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain"
+            />
+          </span>
         ) : (
-          <span className="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
+          <span className="flex size-12 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
             <Icon icon={KIND_ICON[item.kind]} width={22} height={22} />
           </span>
         )}
