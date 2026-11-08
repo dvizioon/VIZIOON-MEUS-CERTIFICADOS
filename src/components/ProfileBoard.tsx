@@ -31,14 +31,13 @@ function OngoingCard({ item }: { item: Ongoing }) {
     <article className="rounded-2xl border border-border bg-card p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between gap-2">
         {item.logo ? (
-          // logo local (png/svg)
           // biome-ignore lint/performance/noImgElement: logo local do Método ACCENT
           <img
             src={item.logo}
             alt=""
-            width={48}
-            height={48}
-            className="size-12 shrink-0 rounded-xl border border-border bg-black object-contain p-1.5"
+            width={180}
+            height={60}
+            className="h-14 w-[11.5rem] shrink-0 rounded-xl border border-border bg-black object-contain object-center p-1.5"
           />
         ) : (
           <span className="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
