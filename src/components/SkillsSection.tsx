@@ -10,8 +10,11 @@ import { SectionHead } from "./SectionHead";
 
 const CATEGORY_ORDER: SkillCategory[] = [
   "frameworks",
+  "build",
   "backend",
   "linguagens",
+  "formatos",
+  "dados",
   "sistemas",
   "servidores",
   "devops",

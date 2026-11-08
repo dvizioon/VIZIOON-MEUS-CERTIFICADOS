@@ -43,8 +43,11 @@ export type Ongoing = {
 
 export type SkillCategory =
   | "frameworks"
+  | "build"
   | "backend"
   | "linguagens"
+  | "formatos"
+  | "dados"
   | "sistemas"
   | "servidores"
   | "devops"
@@ -60,8 +63,11 @@ export type Skill = {
 
 export const SKILL_CATEGORY_LABELS: Record<SkillCategory, string> = {
   frameworks: "Frameworks",
+  build: "Build tools",
   backend: "Backend",
   linguagens: "Linguagens",
+  formatos: "Formatos & APIs",
+  dados: "Dados & mensageria",
   sistemas: "Sistemas operacionais",
   servidores: "Servidores",
   devops: "DevOps",

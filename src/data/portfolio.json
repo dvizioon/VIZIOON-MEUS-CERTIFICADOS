@@ -71,16 +71,22 @@
     ],
     "skills": [
       {
-        "id": "vite",
-        "label": "Vite",
-        "icon": "simple-icons:vite",
-        "category": "frameworks"
-      },
-      {
         "id": "nextjs",
         "label": "Next.js",
         "icon": "simple-icons:nextdotjs",
         "category": "frameworks"
+      },
+      {
+        "id": "vite",
+        "label": "Vite",
+        "icon": "simple-icons:vite",
+        "category": "build"
+      },
+      {
+        "id": "bun",
+        "label": "Bun",
+        "icon": "simple-icons:bun",
+        "category": "build"
       },
       {
         "id": "nodejs",
@@ -147,6 +153,36 @@
         "label": "Python",
         "icon": "simple-icons:python",
         "category": "linguagens"
+      },
+      {
+        "id": "json",
+        "label": "JSON",
+        "icon": "mdi:code-json",
+        "category": "formatos"
+      },
+      {
+        "id": "xml",
+        "label": "XML",
+        "icon": "mdi:file-xml-box",
+        "category": "formatos"
+      },
+      {
+        "id": "graphql",
+        "label": "GraphQL",
+        "icon": "simple-icons:graphql",
+        "category": "formatos"
+      },
+      {
+        "id": "redis",
+        "label": "Redis",
+        "icon": "simple-icons:redis",
+        "category": "dados"
+      },
+      {
+        "id": "rabbitmq",
+        "label": "RabbitMQ",
+        "icon": "simple-icons:rabbitmq",
+        "category": "dados"
       },
       {
         "id": "ubuntu",
