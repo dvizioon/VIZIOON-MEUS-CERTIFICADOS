@@ -1,5 +1,6 @@
 "use client";
 
+import { ScanIcon, ZoomInIcon } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -17,25 +18,85 @@ import {
 } from "@/lib/portfolio";
 import { cn } from "@/lib/utils";
 
+const ZOOM_MIN = 1;
+const ZOOM_MAX = 2.5;
+const ZOOM_STEP = 0.35;
+
 function FaceImage({
   src,
   alt,
+  zoom,
   priority,
 }: {
   src: string;
   alt: string;
+  zoom: number;
   priority?: boolean;
 }) {
   return (
-    <div className="relative h-full w-full bg-slate-100">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-contain p-2"
-        sizes="(max-width: 768px) 90vw, 560px"
-        priority={priority}
-      />
+    <div className="relative h-full w-full overflow-auto bg-slate-100">
+      <div
+        className="flex min-h-full min-w-full items-center justify-center transition-transform duration-200"
+        style={{
+          transform: `scale(${zoom})`,
+          transformOrigin: "center center",
+        }}
+      >
+        <div className="relative h-[420px] w-[560px] max-w-full">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className="object-contain p-1"
+            sizes="(max-width: 768px) 90vw, 640px"
+            priority={priority}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ZoomControls({
+  zoom,
+  onZoomIn,
+  onReset,
+}: {
+  zoom: number;
+  onZoomIn: () => void;
+  onReset: () => void;
+}) {
+  return (
+    <div className="absolute top-3 left-3 z-20 flex gap-1.5">
+      <Button
+        type="button"
+        size="icon-sm"
+        variant="secondary"
+        className="border border-border bg-white/90 shadow-sm"
+        aria-label="Aproximar"
+        onClick={(e) => {
+          e.stopPropagation();
+          onZoomIn();
+        }}
+        onPointerDown={(e) => e.stopPropagation()}
+      >
+        <ZoomInIcon />
+      </Button>
+      <Button
+        type="button"
+        size="icon-sm"
+        variant="secondary"
+        className="border border-border bg-white/90 shadow-sm"
+        aria-label="Tamanho normal"
+        disabled={zoom <= ZOOM_MIN}
+        onClick={(e) => {
+          e.stopPropagation();
+          onReset();
+        }}
+        onPointerDown={(e) => e.stopPropagation()}
+      >
+        <ScanIcon />
+      </Button>
     </div>
   );
 }
@@ -48,6 +109,7 @@ export function PreviewModal({
   onClose: () => void;
 }) {
   const [flipped, setFlipped] = useState(false);
+  const [zoom, setZoom] = useState(ZOOM_MIN);
   const front = cert ? frontFile(cert) : null;
   const back = cert ? backFile(cert) : null;
   const canFlip = !!front && !!back;
@@ -59,10 +121,20 @@ export function PreviewModal({
         : front
       : front;
   const open = !!cert && !!front;
+  const zoomed = zoom > ZOOM_MIN;
 
   useEffect(() => {
     setFlipped(false);
+    setZoom(ZOOM_MIN);
   }, [cert?.id]);
+
+  useEffect(() => {
+    setZoom(ZOOM_MIN);
+  }, [flipped]);
+
+  const zoomIn = () =>
+    setZoom((z) => Math.min(ZOOM_MAX, Number((z + ZOOM_STEP).toFixed(2))));
+  const resetZoom = () => setZoom(ZOOM_MIN);
 
   return (
     <Dialog
@@ -94,65 +166,95 @@ export function PreviewModal({
               <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center gap-3 bg-slate-900/5 px-4 pt-10 pb-3 sm:px-6">
                 {canFlip && back ? (
                   <>
-                    <FlipCard
-                      flipped={flipped}
-                      onFlipChange={setFlipped}
-                      axis="y"
-                      flipOnClick
-                      draggable
-                      tilt={false}
-                      glare={false}
-                      hoverScale={1}
-                      shadow={false}
-                      width={560}
-                      height={420}
-                      radius={16}
-                      background="#f8fafc"
-                      ariaLabel={`Virar certificado ${cert.title}`}
-                      className="mx-auto max-w-full"
-                      front={
-                        <FaceImage
-                          src={previewFor(front.path)}
-                          alt={`Frente de ${cert.title}`}
-                          priority
-                        />
-                      }
-                      back={
-                        <FaceImage
-                          src={previewFor(back.path)}
-                          alt={`Verso de ${cert.title}`}
-                        />
-                      }
-                    />
+                    <div className="relative mx-auto w-full max-w-[640px]">
+                      <ZoomControls
+                        zoom={zoom}
+                        onZoomIn={zoomIn}
+                        onReset={resetZoom}
+                      />
+                      <FlipCard
+                        flipped={flipped}
+                        onFlipChange={setFlipped}
+                        axis="y"
+                        flipOnClick={!zoomed}
+                        draggable={!zoomed}
+                        tilt={false}
+                        glare={false}
+                        hoverScale={1}
+                        shadow={false}
+                        width={640}
+                        height={480}
+                        radius={16}
+                        background="#f8fafc"
+                        ariaLabel={`Virar certificado ${cert.title}`}
+                        className="mx-auto max-w-full"
+                        front={
+                          <FaceImage
+                            src={previewFor(front.path)}
+                            alt={`Frente de ${cert.title}`}
+                            zoom={zoom}
+                            priority
+                          />
+                        }
+                        back={
+                          <FaceImage
+                            src={previewFor(back.path)}
+                            alt={`Verso de ${cert.title}`}
+                            zoom={zoom}
+                          />
+                        }
+                      />
+                    </div>
                     <div className="flex flex-wrap items-center justify-center gap-2">
-                      <Badge variant={flipped ? "outline" : "default"}>
-                        Frente
-                      </Badge>
-                      <Badge variant={flipped ? "default" : "outline"}>
-                        Verso
-                      </Badge>
-                      <Button
+                      <button
                         type="button"
-                        variant="secondary"
-                        size="sm"
-                        onClick={() => setFlipped((v) => !v)}
+                        onClick={() => setFlipped(false)}
+                        className="border-0 bg-transparent p-0"
                       >
-                        Virar carta
-                      </Button>
+                        <Badge variant={flipped ? "outline" : "default"}>
+                          Frente
+                        </Badge>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setFlipped(true)}
+                        className="border-0 bg-transparent p-0"
+                      >
+                        <Badge variant={flipped ? "default" : "outline"}>
+                          Verso
+                        </Badge>
+                      </button>
                     </div>
                     <p className="text-center text-sm text-muted-foreground">
-                      Toque ou arraste a carta pra ver a outra face.
+                      Toque ou arraste pra virar. Use a lupa pra aproximar.
                     </p>
                   </>
                 ) : (
-                  <Image
-                    src={previewFor(front.path)}
-                    alt={`Preview de ${cert.title}`}
-                    width={1400}
-                    height={990}
-                    className="mx-auto h-auto max-h-[min(62vh,620px)] w-full object-contain drop-shadow-lg"
-                    priority
-                  />
+                  <div className="relative mx-auto w-full max-w-[720px]">
+                    <ZoomControls
+                      zoom={zoom}
+                      onZoomIn={zoomIn}
+                      onReset={resetZoom}
+                    />
+                    <div className="overflow-auto rounded-2xl border border-border bg-slate-100">
+                      <div
+                        className="flex justify-center transition-transform duration-200"
+                        style={{
+                          transform: `scale(${zoom})`,
+                          transformOrigin: "center top",
+                        }}
+                      >
+                        <Image
+                          src={previewFor(front.path)}
+                          alt={`Preview de ${cert.title}`}
+                          width={1400}
+                          height={990}
+                          className="h-auto max-h-[min(62vh,620px)] w-full object-contain"
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
                 )}
               </div>
 
@@ -215,9 +317,7 @@ export function PreviewModal({
                   ) : null}
                   {cert.files
                     .filter(
-                      (f) =>
-                        f.path !== front?.path &&
-                        f.path !== back?.path,
+                      (f) => f.path !== front?.path && f.path !== back?.path,
                     )
                     .map((extra) => (
                       <a
