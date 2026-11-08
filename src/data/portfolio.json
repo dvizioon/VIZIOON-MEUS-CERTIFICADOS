@@ -367,7 +367,8 @@
           "label": "PDF",
           "path": "/certificates/graduacao.pdf"
         }
-      ]
+      ],
+      "verifyUrl": "https://diplomas.cogna.com.br/diploma-digital/validador/documento/academico/298.298.8a36d4a8851d"
     },
     {
       "id": "atestado-conclusao",
@@ -503,7 +504,8 @@
           "path": "/certificates/html-css-01-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/html-css-ambiente-arquivos-tags"
     },
     {
       "id": "html-css-02",
@@ -523,7 +525,8 @@
           "path": "/certificates/html-css-02-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/html-css-classes-posicionamento-flexbox"
     },
     {
       "id": "html-css-03",
@@ -543,7 +546,8 @@
           "path": "/certificates/html-css-03-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/html-css-cabecalho-footer-variaveis-css"
     },
     {
       "id": "html-css-04",
@@ -563,7 +567,8 @@
           "path": "/certificates/html-css-04-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/html-css-responsividade-publicacao-projetos"
     },
     {
       "id": "git-github",
@@ -583,7 +588,8 @@
           "path": "/certificates/git-github-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/git-github-compartilhando-colaborando-projetos"
     },
     {
       "id": "chatgpt",
@@ -603,7 +609,8 @@
           "path": "/certificates/chatgpt-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/chatgpt-otimizando-qualidade-resultados"
     },
     {
       "id": "linkedin-curso",
@@ -623,7 +630,8 @@
           "path": "/certificates/linkedin-back.pdf"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/user/danielmartinsjob/course/linkedin-perfil-trabalhar-voce/certificate"
     },
     {
       "id": "challenges-one",
@@ -647,7 +655,8 @@
           "path": "/certificates/challenges-one-insignia.png"
         }
       ],
-      "description": "Curso da trilha Alura + Oracle One."
+      "description": "Curso da trilha Alura + Oracle One.",
+      "verifyUrl": "https://cursos.alura.com.br/certificate/danielmartinsjob/challenge-decodificador-texto"
     },
     {
       "id": "rocketseat-php",
@@ -680,7 +689,8 @@
           "path": "/certificates/nlw-react.pdf"
         }
       ],
-      "description": "Formação prática pela Rocketseat."
+      "description": "Formação prática pela Rocketseat.",
+      "verifyUrl": "https://app.rocketseat.com.br/certificates/20a3d7fc-9016-41ae-8295-26db7fcaa2a8"
     },
     {
       "id": "pm3-imersao-design",
@@ -744,7 +754,8 @@
           "path": "/certificates/bradesco-modelagem.pdf"
         }
       ],
-      "description": "Curso da Fundação Bradesco Escola Virtual. Carga horária de 8h."
+      "description": "Curso da Fundação Bradesco Escola Virtual. Carga horária de 8h.",
+      "verifyUrl": "https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateDialog.aspx?OgRFILHQ03VS8Qdl2%2fRHcU6PYSDFrfS6"
     },
     {
       "id": "bradesco-implementando-bd",
@@ -776,7 +787,8 @@
           "path": "/certificates/python-intro.pdf"
         }
       ],
-      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h."
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h.",
+      "verifyUrl": "https://www.colaboraread.com.br/autenticidade/index"
     },
     {
       "id": "python-analise",
@@ -792,7 +804,8 @@
           "path": "/certificates/python-analise.pdf"
         }
       ],
-      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h."
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 15h.",
+      "verifyUrl": "https://www.colaboraread.com.br/autenticidade/index"
     },
     {
       "id": "python-estruturas",
@@ -808,7 +821,8 @@
           "path": "/certificates/python-estruturas.pdf"
         }
       ],
-      "description": "Curso de extensão pela Anhanguera. Carga horária de 10h."
+      "description": "Curso de extensão pela Anhanguera. Carga horária de 10h.",
+      "verifyUrl": "https://www.colaboraread.com.br/autenticidade/index"
     },
     {
       "id": "python-linguagem",
@@ -824,7 +838,8 @@
           "path": "/certificates/python-linguagem.pdf"
         }
       ],
-      "description": "Fundação Bradesco Escola Virtual. Autoinstrucional."
+      "description": "Fundação Bradesco Escola Virtual. Autoinstrucional.",
+      "verifyUrl": "https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateContent.aspx?OgRFILHQ03UrdnyGhC1o5xOX3TkNeftX"
     },
     {
       "id": "kivy-python",
@@ -840,7 +855,8 @@
           "path": "/certificates/kivy-python.pdf"
         }
       ],
-      "description": "Fundação Bradesco Escola Virtual."
+      "description": "Fundação Bradesco Escola Virtual.",
+      "verifyUrl": "https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateContent.aspx?OgRFILHQ03VYA8Ty526revAVkjPL%2bG3Z"
     },
     {
       "id": "android-studio",
@@ -856,7 +872,8 @@
           "path": "/certificates/android-studio.pdf"
         }
       ],
-      "description": "Fundação Bradesco Escola Virtual."
+      "description": "Fundação Bradesco Escola Virtual.",
+      "verifyUrl": "https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateContent.aspx?OgRFILHQ03UrdnyGhC1o5%2ft6q5YdqGes"
     },
     {
       "id": "snct",

@@ -333,7 +333,7 @@ export function PreviewModal({
                     ))}
                   {cert.verifyUrl ? (
                     <a
-                      className={buttonVariants({ variant: "link" })}
+                      className={buttonVariants({ variant: "secondary" })}
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"

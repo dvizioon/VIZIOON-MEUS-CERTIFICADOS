@@ -326,6 +326,19 @@ export function CertificateVault({
                                   >
                                     Baixar
                                   </a>
+                                  {cert.verifyUrl ? (
+                                    <a
+                                      className={buttonVariants({
+                                        variant: "secondary",
+                                        size: "sm",
+                                      })}
+                                      href={cert.verifyUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                    >
+                                      Verificar
+                                    </a>
+                                  ) : null}
                                 </div>
                               </div>
                             </article>

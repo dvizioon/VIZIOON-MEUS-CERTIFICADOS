@@ -131,6 +131,16 @@ function FeaturedAside({
         >
           Baixar PDF
         </a>
+        {current.verifyUrl ? (
+          <a
+            className={buttonVariants({ variant: "secondary" })}
+            href={current.verifyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Verificar autenticidade
+          </a>
+        ) : null}
       </div>
     </aside>
   );
