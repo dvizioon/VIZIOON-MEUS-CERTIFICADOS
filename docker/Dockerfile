@@ -10,9 +10,10 @@ RUN bun run build
 
 FROM node:22-bookworm-slim
 
-ARG APP_PORT=3000
+ARG APP_PORT=5560
+ARG PORT=5560
 ARG APP_ENV=production
-ENV PORT=${APP_PORT}
+ENV PORT=${PORT}
 ENV APP_ENV=${APP_ENV}
 ENV NODE_ENV=production
 ENV HOSTNAME=0.0.0.0
@@ -25,5 +26,5 @@ COPY --from=build /app/package.json ./package.json
 COPY docker/docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-EXPOSE ${APP_PORT}
+EXPOSE ${PORT}
 ENTRYPOINT ["docker-entrypoint.sh"]
