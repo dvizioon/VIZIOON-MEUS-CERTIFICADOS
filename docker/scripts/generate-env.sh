@@ -103,7 +103,7 @@ merge_overlay_defaults() {
 
     if [ "${CI:-}" = "true" ]; then
       case "$key" in
-        PORT|HOST|HOSTNAME|NODE_ENV)
+        PORT|HOSTNAME|NODE_ENV)
           continue
           ;;
       esac
