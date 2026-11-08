@@ -25,7 +25,6 @@ import {
   previewFor,
   primaryFile,
 } from "@/lib/portfolio";
-import { cn } from "@/lib/utils";
 
 const CircularCarousel = dynamic(
   () => import("@/components/CircularCarousel"),
@@ -94,16 +93,14 @@ function FeaturedAside({
         </div>
 
         {current.description ? (
-          <p className="text-[0.98rem] leading-relaxed text-slate-600">
+          <p className="text-base leading-relaxed text-slate-600">
             {current.description}
           </p>
         ) : null}
 
         {current.files.length > 1 ? (
           <div className="space-y-1.5">
-            <p className="text-xs font-semibold tracking-wide text-slate-500 uppercase">
-              Arquivos
-            </p>
+            <p className="text-sm font-semibold text-slate-500">Arquivos</p>
             <ul className="space-y-1 text-sm text-slate-700">
               {current.files.map((f) => (
                 <li key={f.path}>
@@ -124,14 +121,9 @@ function FeaturedAside({
       </div>
 
       <div className="flex flex-wrap gap-2 pt-2">
-        <Button className="rounded-full" onClick={() => onPreview(current)}>
-          Ver preview
-        </Button>
+        <Button onClick={() => onPreview(current)}>Ver preview</Button>
         <a
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "rounded-full",
-          )}
+          className={buttonVariants({ variant: "outline" })}
           href={file.path}
           download={downloadName(file.path)}
           target="_blank"

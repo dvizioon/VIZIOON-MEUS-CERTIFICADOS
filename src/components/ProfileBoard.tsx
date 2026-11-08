@@ -41,37 +41,34 @@ function OngoingCard({ item }: { item: Ongoing }) {
             className="size-11 rounded-xl border border-border bg-black object-contain p-1"
           />
         ) : (
-          <span className="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <span className="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
             <Icon icon={KIND_ICON[item.kind]} width={22} height={22} />
           </span>
         )}
         <Badge variant="secondary">{item.status}</Badge>
       </div>
-      <p className="text-xs font-semibold tracking-wide text-primary uppercase">
+      <p className="text-sm font-semibold text-primary">
         {ONGOING_LABELS[item.kind]}
       </p>
       <h3 className="mt-1 text-lg font-semibold text-foreground">
         {item.title}
       </h3>
       {facts.length > 0 ? (
-        <dl className="mt-3 grid gap-2 text-sm">
+        <dl className="mt-3 grid gap-2 text-base">
           {facts.map((fact) => (
             <div key={fact.label}>
-              <dt className="text-xs text-muted-foreground">{fact.label}</dt>
+              <dt className="text-sm text-muted-foreground">{fact.label}</dt>
               <dd className="font-medium text-foreground">{fact.value}</dd>
             </div>
           ))}
         </dl>
       ) : null}
       {item.note ? (
-        <p className="mt-3 text-sm text-muted-foreground">{item.note}</p>
+        <p className="mt-3 text-base text-muted-foreground">{item.note}</p>
       ) : null}
       {item.url ? (
         <a
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "mt-3 rounded-full",
-          )}
+          className={cn(buttonVariants({ variant: "outline" }), "mt-3")}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -108,7 +105,7 @@ export function ProfileBoard({ profile }: { profile: Profile }) {
             {liveSocial.map((item) => (
               <a
                 key={item.id}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-2 text-sm font-medium text-foreground transition hover:border-primary/30 hover:bg-primary/5"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3.5 py-2 text-base font-medium text-foreground transition hover:border-primary/30 hover:bg-primary/5"
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -110,12 +110,10 @@ export function CertificateVault({
         <Reveal delay={60}>
           <div className="sticky top-3 z-20 mb-4 flex flex-col gap-3 rounded-2xl border border-primary/25 bg-card/95 p-3.5 shadow-[0_12px_36px_rgba(37,99,235,0.12)] ring-1 ring-primary/15 backdrop-blur-md">
             <div className="flex items-center justify-between gap-2">
-              <p className="text-[0.7rem] font-bold tracking-[0.14em] text-primary uppercase">
-                Navegue pelas abas
-              </p>
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.7rem] font-semibold text-primary">
+              <p className="text-sm font-bold text-primary">Navegue pelas abas</p>
+              <Badge variant="secondary">
                 {filtered.length} doc{filtered.length === 1 ? "" : "s"}
-              </span>
+              </Badge>
             </div>
 
             <div
@@ -135,7 +133,7 @@ export function CertificateVault({
                       key === "todos" ? "Todos os documentos" : SHELF_HINTS[key]
                     }
                     className={cn(
-                      "flex min-h-[4.25rem] flex-col items-start gap-1 rounded-2xl border px-3 py-2.5 text-left transition",
+                      "flex min-h-[4.75rem] flex-col items-start gap-1.5 rounded-xl border px-3 py-3 text-left transition",
                       active
                         ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/25"
                         : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-primary/5",
@@ -145,22 +143,22 @@ export function CertificateVault({
                     <span className="flex w-full items-center justify-between gap-2">
                       <Icon
                         icon={SHELF_ICONS[key]}
-                        width={22}
-                        height={22}
+                        width={24}
+                        height={24}
                         className={active ? "opacity-100" : "text-primary"}
                       />
                       <span
                         className={cn(
-                          "rounded-full px-2 py-0.5 text-[0.65rem] font-bold tabular-nums",
+                          "text-sm font-bold tabular-nums",
                           active
-                            ? "bg-white/20 text-primary-foreground"
-                            : "bg-muted text-muted-foreground",
+                            ? "text-primary-foreground"
+                            : "text-muted-foreground",
                         )}
                       >
                         {shelfCounts[key]}
                       </span>
                     </span>
-                    <span className="text-[0.78rem] leading-tight font-bold sm:text-[0.82rem]">
+                    <span className="text-sm leading-snug font-bold sm:text-[0.95rem]">
                       {SHELF_LABELS[key]}
                     </span>
                   </button>
@@ -168,7 +166,7 @@ export function CertificateVault({
               })}
             </div>
 
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {shelf === "todos"
                 ? "Mostrando todos. Escolha uma aba pra achar mais rápido o que baixar."
                 : SHELF_HINTS[shelf]}
@@ -182,7 +180,7 @@ export function CertificateVault({
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Buscar título ou instituição…"
                 type="search"
-                className="h-10 rounded-full bg-card"
+                className="h-11 rounded-md bg-card text-base"
               />
             </label>
           </div>
@@ -300,7 +298,7 @@ export function CertificateVault({
                                     </Badge>
                                   ) : null}
                                 </div>
-                                <h4 className="line-clamp-2 text-sm font-semibold text-foreground">
+                                <h4 className="line-clamp-2 text-base font-semibold text-foreground">
                                   {cert.title}
                                 </h4>
                                 <div className="flex flex-wrap gap-1.5">
@@ -308,19 +306,15 @@ export function CertificateVault({
                                     type="button"
                                     variant="outline"
                                     size="sm"
-                                    className="rounded-full"
                                     onClick={() => setSelected(cert)}
                                   >
                                     Preview
                                   </Button>
                                   <a
-                                    className={cn(
-                                      buttonVariants({
-                                        variant: "outline",
-                                        size: "sm",
-                                      }),
-                                      "rounded-full",
-                                    )}
+                                    className={buttonVariants({
+                                      variant: "outline",
+                                      size: "sm",
+                                    })}
                                     href={file.path}
                                     download={downloadName(file.path)}
                                     target="_blank"

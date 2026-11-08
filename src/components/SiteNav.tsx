@@ -13,7 +13,7 @@ export function SiteNav({ className }: { className?: string }) {
   return (
     <nav
       className={cn(
-        "relative z-20 flex max-w-full flex-wrap justify-end gap-1",
+        "relative z-20 flex max-w-full flex-wrap justify-end gap-2",
         className,
       )}
       aria-label="Seções"
@@ -22,7 +22,7 @@ export function SiteNav({ className }: { className?: string }) {
         <a
           key={link.href}
           href={link.href}
-          className="rounded-full border border-blue-900/10 bg-white/50 px-2.5 py-1 text-[0.72rem] font-semibold text-blue-950 transition hover:bg-white/80"
+          className="rounded-md border border-blue-900/10 bg-white/50 px-3 py-1.5 text-sm font-semibold text-blue-950 transition hover:bg-white/80"
         >
           {link.label}
         </a>

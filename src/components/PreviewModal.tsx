@@ -76,17 +76,14 @@ export function PreviewModal({
                 </DialogTitle>
 
                 {cert.description ? (
-                  <p className="mb-3 line-clamp-2 text-sm text-slate-600">
+                  <p className="mb-3 line-clamp-3 text-base text-slate-600">
                     {cert.description}
                   </p>
                 ) : null}
 
                 <div className="flex flex-wrap gap-2">
                   <a
-                    className={cn(
-                      buttonVariants({ variant: "default" }),
-                      "rounded-full",
-                    )}
+                    className={buttonVariants({ variant: "default" })}
                     href={file.path}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -94,10 +91,7 @@ export function PreviewModal({
                     Abrir PDF
                   </a>
                   <a
-                    className={cn(
-                      buttonVariants({ variant: "outline" }),
-                      "rounded-full",
-                    )}
+                    className={buttonVariants({ variant: "outline" })}
                     href={file.path}
                     download={downloadName(file.path)}
                     target="_blank"
@@ -108,10 +102,7 @@ export function PreviewModal({
                   {cert.files.slice(1).map((extra) => (
                     <a
                       key={extra.path}
-                      className={cn(
-                        buttonVariants({ variant: "ghost" }),
-                        "rounded-full",
-                      )}
+                      className={buttonVariants({ variant: "ghost" })}
                       href={extra.path}
                       download={downloadName(extra.path)}
                       target="_blank"
@@ -122,7 +113,7 @@ export function PreviewModal({
                   ))}
                   {cert.verifyUrl ? (
                     <a
-                      className={cn(buttonVariants({ variant: "link" }))}
+                      className={buttonVariants({ variant: "link" })}
                       href={cert.verifyUrl}
                       target="_blank"
                       rel="noopener noreferrer"

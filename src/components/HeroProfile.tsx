@@ -65,7 +65,7 @@ export function HeroProfile({ profile }: { profile: Profile }) {
                 item.url ? (
                   <a
                     key={item.id}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-blue-900/15 bg-white/40 px-3.5 py-2 text-[0.88rem] font-semibold text-blue-950 transition-colors hover:bg-white/60 max-[680px]:[&>span]:hidden"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-blue-900/15 bg-white/40 px-3.5 py-2 text-base font-semibold text-blue-950 transition-colors hover:bg-white/60 max-[680px]:[&>span]:hidden"
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
