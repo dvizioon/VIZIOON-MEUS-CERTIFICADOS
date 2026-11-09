@@ -73,7 +73,7 @@ set_key() {
 
 apply_container_paths() {
   local outfile="$1"
-  set_key HOSTNAME "0.0.0.0" "$outfile"
+  set_key HOST "0.0.0.0" "$outfile"
   set_key NODE_ENV "production" "$outfile"
 }
 
@@ -103,7 +103,7 @@ merge_overlay_defaults() {
 
     if [ "${CI:-}" = "true" ]; then
       case "$key" in
-        PORT|HOSTNAME|NODE_ENV)
+        PORT|HOST|NODE_ENV)
           continue
           ;;
       esac

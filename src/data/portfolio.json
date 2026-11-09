@@ -403,6 +403,46 @@
       ]
     },
     {
+      "id": "informatica-basica-datacontrol",
+      "title": "Informática Básica · Capacitação Administrativa",
+      "institution": "Datacontrol",
+      "hours": 120,
+      "category": "curso",
+      "featured": false,
+      "priority": 12,
+      "description": "Curso Datacontrol Educação e Tecnologia. Módulos Windows, Internet, Photoshop, PowerPoint, Word e Excel. Carga horária de 120h (2017–2018).",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/informatica-basica-datacontrol-front-v2.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/informatica-basica-datacontrol-back-v2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tecnico-internet-senac",
+      "title": "Técnico em Informática para Internet",
+      "institution": "Senac",
+      "hours": 1000,
+      "category": "formacao",
+      "featured": true,
+      "priority": 5,
+      "description": "Habilitação profissional técnica de nível médio (Senac). Carga horária de 1.000h. Concluído em 20/10/2023. Registro 78BC8C7.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/tecnico-internet-senac-front-v2.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/tecnico-internet-senac-back-v2.pdf"
+        }
+      ]
+    },
+    {
       "id": "formacao-one",
       "title": "Iniciante em Programação T7 ONE",
       "institution": "Alura + Oracle",

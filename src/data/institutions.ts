@@ -23,6 +23,20 @@ export const INSTITUTIONS: Institution[] = [
     order: 0,
   },
   {
+    id: "senac",
+    name: "Senac",
+    match: ["Senac"],
+    logos: ["/logos/senac.svg"],
+    order: 1.5,
+  },
+  {
+    id: "datacontrol",
+    name: "Datacontrol",
+    match: ["Datacontrol"],
+    logos: ["/logos/datacontrol.svg"],
+    order: 1.7,
+  },
+  {
     id: "alura-oracle",
     name: "Alura + Oracle",
     match: ["Alura + Oracle"],
