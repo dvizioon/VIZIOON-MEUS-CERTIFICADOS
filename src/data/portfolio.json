@@ -414,11 +414,11 @@
       "files": [
         {
           "label": "Frente",
-          "path": "/certificates/informatica-basica-datacontrol-front-v2.pdf"
+          "path": "/certificates/informatica-basica-datacontrol-front-v3.pdf"
         },
         {
           "label": "Verso",
-          "path": "/certificates/informatica-basica-datacontrol-back-v2.pdf"
+          "path": "/certificates/informatica-basica-datacontrol-back-v3.pdf"
         }
       ]
     },
@@ -434,11 +434,11 @@
       "files": [
         {
           "label": "Frente",
-          "path": "/certificates/tecnico-internet-senac-front-v2.pdf"
+          "path": "/certificates/tecnico-internet-senac-front-v3.pdf"
         },
         {
           "label": "Verso",
-          "path": "/certificates/tecnico-internet-senac-back-v2.pdf"
+          "path": "/certificates/tecnico-internet-senac-back-v3.pdf"
         }
       ]
     },
