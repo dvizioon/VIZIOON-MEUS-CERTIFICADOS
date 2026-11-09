@@ -491,6 +491,23 @@
       ]
     },
     {
+      "id": "coursera-computational-vision",
+      "title": "Computational Vision",
+      "institution": "Coursera",
+      "hours": null,
+      "category": "curso",
+      "featured": true,
+      "priority": 12,
+      "description": "Programa de cursos integrados. University of Colorado Boulder via Coursera. Concluído em 15/06/2026.",
+      "verifyUrl": "https://coursera.org/verify/I0MSE77LJIQ7",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/coursera-computational-vision.pdf"
+        }
+      ]
+    },
+    {
       "id": "psinergia",
       "title": "Psinergia em ação - A magia da comunicação",
       "institution": "Psinergia",

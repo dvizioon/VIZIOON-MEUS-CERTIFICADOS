@@ -30,8 +30,15 @@ export const INSTITUTIONS: Institution[] = [
     id: "kadoo",
     name: "Kadoo",
     match: ["Kadoo"],
-    logos: ["/logos/outros.svg"],
+    logos: ["/logos/kadoo.svg"],
     order: 2.5,
+  },
+  {
+    id: "coursera",
+    name: "Coursera",
+    match: ["Coursera"],
+    logos: ["/logos/coursera.svg"],
+    order: 2.6,
   },
   {
     id: "psinergia",
