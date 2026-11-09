@@ -88,7 +88,7 @@ function FeaturedAside({
               current.hours != null ? `${current.hours} horas` : null,
             ]
               .filter(Boolean)
-              .join(" · ")}
+              .join(" - ")}
           </p>
         </div>
 

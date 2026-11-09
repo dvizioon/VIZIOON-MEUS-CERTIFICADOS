@@ -109,28 +109,26 @@ export function PreviewModal({
   onClose: () => void;
 }) {
   const [flipped, setFlipped] = useState(false);
+  const [page, setPage] = useState(0);
   const [zoom, setZoom] = useState(ZOOM_MIN);
+  const files = cert?.files ?? [];
   const front = cert ? frontFile(cert) : null;
   const back = cert ? backFile(cert) : null;
-  const canFlip = !!front && !!back;
-  const active = !front
-    ? null
-    : canFlip
-      ? flipped
-        ? back
-        : front
-      : front;
-  const open = !!cert && !!front;
+  const canFlip = !!front && !!back && files.length === 2;
+  const pageFile = files[Math.min(page, Math.max(files.length - 1, 0))] ?? null;
+  const active = canFlip ? (flipped ? back : front) : pageFile;
+  const open = !!cert && files.length > 0;
   const zoomed = zoom > ZOOM_MIN;
 
   useEffect(() => {
     setFlipped(false);
+    setPage(0);
     setZoom(ZOOM_MIN);
   }, [cert?.id]);
 
   useEffect(() => {
     setZoom(ZOOM_MIN);
-  }, [flipped]);
+  }, [flipped, page]);
 
   const zoomIn = () =>
     setZoom((z) => Math.min(ZOOM_MAX, Number((z + ZOOM_STEP).toFixed(2))));
@@ -154,7 +152,7 @@ export function PreviewModal({
         )}
       >
         <AnimatePresence mode="wait">
-          {cert && front ? (
+          {cert && files.length > 0 ? (
             <motion.div
               key={cert.id}
               initial={{ opacity: 0, y: 12 }}
@@ -164,7 +162,7 @@ export function PreviewModal({
               className="flex max-h-[min(92vh,960px)] flex-col"
             >
               <div className="relative flex min-h-0 flex-1 flex-col items-center justify-center gap-3 bg-slate-900/5 px-4 pt-10 pb-3 sm:px-6">
-                {canFlip && back ? (
+                {canFlip && front && back ? (
                   <>
                     <div className="relative mx-auto w-full max-w-[640px]">
                       <ZoomControls
@@ -229,33 +227,55 @@ export function PreviewModal({
                       Toque ou arraste pra virar. Use a lupa pra aproximar.
                     </p>
                   </>
-                ) : (
-                  <div className="relative mx-auto w-full max-w-[720px]">
-                    <ZoomControls
-                      zoom={zoom}
-                      onZoomIn={zoomIn}
-                      onReset={resetZoom}
-                    />
-                    <div className="overflow-auto rounded-2xl border border-border bg-slate-100">
-                      <div
-                        className="flex justify-center transition-transform duration-200"
-                        style={{
-                          transform: `scale(${zoom})`,
-                          transformOrigin: "center top",
-                        }}
-                      >
-                        <Image
-                          src={previewFor(front.path)}
-                          alt={`Preview de ${cert.title}`}
-                          width={1400}
-                          height={990}
-                          className="h-auto max-h-[min(62vh,620px)] w-full object-contain"
-                          priority
-                        />
+                ) : pageFile ? (
+                  <>
+                    <div className="relative mx-auto w-full max-w-[720px]">
+                      <ZoomControls
+                        zoom={zoom}
+                        onZoomIn={zoomIn}
+                        onReset={resetZoom}
+                      />
+                      <div className="overflow-auto rounded-2xl border border-border bg-slate-100">
+                        <div
+                          className="flex justify-center transition-transform duration-200"
+                          style={{
+                            transform: `scale(${zoom})`,
+                            transformOrigin: "center top",
+                          }}
+                        >
+                          <Image
+                            key={pageFile.path}
+                            src={previewFor(pageFile.path)}
+                            alt={`${pageFile.label} - ${cert.title}`}
+                            width={1400}
+                            height={1680}
+                            className="h-auto max-h-[min(62vh,620px)] w-full object-contain"
+                            priority
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
+                    {files.length > 1 ? (
+                      <div className="flex flex-wrap items-center justify-center gap-2">
+                        {files.map((file, i) => (
+                          <button
+                            key={file.path}
+                            type="button"
+                            onClick={() => setPage(i)}
+                            className="border-0 bg-transparent p-0"
+                          >
+                            <Badge variant={page === i ? "default" : "outline"}>
+                              {file.label}
+                            </Badge>
+                          </button>
+                        ))}
+                      </div>
+                    ) : null}
+                    <p className="text-center text-sm text-muted-foreground">
+                      Use a lupa pra aproximar.
+                    </p>
+                  </>
+                ) : null}
               </div>
 
               <div className="shrink-0 border-t border-white/40 bg-white/55 px-4 py-4 backdrop-blur-xl sm:px-6">
@@ -265,10 +285,8 @@ export function PreviewModal({
                   {cert.hours != null ? (
                     <Badge variant="outline">{cert.hours}h</Badge>
                   ) : null}
-                  {canFlip ? (
-                    <Badge variant="secondary">
-                      {flipped ? "Verso" : "Frente"}
-                    </Badge>
+                  {active ? (
+                    <Badge variant="secondary">{active.label}</Badge>
                   ) : null}
                 </div>
 
@@ -291,7 +309,7 @@ export function PreviewModal({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Abrir {canFlip ? (flipped ? "verso" : "frente") : "PDF"}
+                        Abrir {active.label}
                       </a>
                       <a
                         className={buttonVariants({ variant: "outline" })}
@@ -300,25 +318,12 @@ export function PreviewModal({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Baixar {canFlip ? (flipped ? "verso" : "frente") : ""}
+                        Baixar {active.label}
                       </a>
                     </>
                   ) : null}
-                  {canFlip && front && back ? (
-                    <a
-                      className={buttonVariants({ variant: "ghost" })}
-                      href={flipped ? front.path : back.path}
-                      download={downloadName(flipped ? front.path : back.path)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Baixar {flipped ? "frente" : "verso"}
-                    </a>
-                  ) : null}
-                  {cert.files
-                    .filter(
-                      (f) => f.path !== front?.path && f.path !== back?.path,
-                    )
+                  {files
+                    .filter((f) => f.path !== active?.path)
                     .map((extra) => (
                       <a
                         key={extra.path}
@@ -328,7 +333,7 @@ export function PreviewModal({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {extra.label}
+                        Baixar {extra.label}
                       </a>
                     ))}
                   {cert.verifyUrl ? (

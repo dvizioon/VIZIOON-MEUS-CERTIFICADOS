@@ -7,7 +7,7 @@
     "summary": "Baixe comprovantes de escolaridade, históricos e certificados. Útil para RH, Censo da IES e atualização cadastral.",
     "location": "Brasil",
     "links": {
-      "lattes": "",
+      "lattes": "http://lattes.cnpq.br/8911938368160216",
       "linkedin": "https://www.linkedin.com/in/danielestevaomm",
       "github": "https://github.com/dvizioon",
       "website": "https://dvizioon.com"
@@ -65,7 +65,7 @@
       {
         "id": "lattes",
         "label": "Lattes",
-        "url": "",
+        "url": "http://lattes.cnpq.br/8911938368160216",
         "icon": "mdi:school-outline"
       }
     ],
@@ -355,7 +355,7 @@
     },
     {
       "id": "graduacao",
-      "title": "Diploma · Certificado de Graduação",
+      "title": "Diploma - Certificado de Graduação",
       "institution": "Graduação",
       "hours": null,
       "category": "titulacao",
@@ -378,7 +378,7 @@
       "category": "titulacao",
       "featured": true,
       "priority": 2,
-      "description": "Declaração · atestado de conclusão.",
+      "description": "Declaração - atestado de conclusão.",
       "files": [
         {
           "label": "PDF",
@@ -403,14 +403,134 @@
       ]
     },
     {
+      "id": "ensino-medio-liceu",
+      "title": "Certificado de Conclusão - Ensino Médio",
+      "institution": "CE Liceu Maranhense",
+      "hours": 3560,
+      "category": "titulacao",
+      "featured": true,
+      "priority": 4,
+      "description": "Ensino Médio Regular. Concluído em 06/12/2021. Registro nº 252, Livro 01, Fls. 61. Inclui verso com disciplinas e histórico.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/ensino-medio-liceu-frente.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/ensino-medio-liceu-verso.pdf"
+        },
+        {
+          "label": "Histórico",
+          "path": "/certificates/ensino-medio-liceu-historico.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ensino-fundamental-carlos-saad",
+      "title": "Certificado de Conclusão - Ensino Fundamental",
+      "institution": "UEB Professor Carlos Saads",
+      "hours": null,
+      "category": "titulacao",
+      "featured": false,
+      "priority": 14,
+      "description": "Ensino Fundamental Regular (2018). Emitido em 07/11/2019. Registro nº 219, Livro 03, folha 76. Inclui verso e histórico (2 páginas).",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/ensino-fundamental-carlos-saad-frente.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/ensino-fundamental-carlos-saad-verso.pdf"
+        },
+        {
+          "label": "Histórico 1",
+          "path": "/certificates/ensino-fundamental-carlos-saad-historico-p1.pdf"
+        },
+        {
+          "label": "Histórico 2",
+          "path": "/certificates/ensino-fundamental-carlos-saad-historico-p2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "historico-raimundo-chaves",
+      "title": "Histórico Escolar - UEB Raimundo Chaves",
+      "institution": "UEB Raimundo Chaves",
+      "hours": null,
+      "category": "titulacao",
+      "featured": false,
+      "priority": 15,
+      "description": "Histórico do Ensino Fundamental (1º ciclo, etapas II e III - 2011-2012).",
+      "files": [
+        {
+          "label": "Página 1",
+          "path": "/certificates/historico-raimundo-chaves-p1.pdf"
+        },
+        {
+          "label": "Página 2",
+          "path": "/certificates/historico-raimundo-chaves-p2.pdf"
+        }
+      ]
+    },
+    {
+      "id": "kadoo-educacao-tech",
+      "title": "Formação em Educação Tech",
+      "institution": "Kadoo",
+      "hours": 40,
+      "category": "formacao",
+      "featured": true,
+      "priority": 11,
+      "description": "Trilhas: planejamento pedagógico, gestão de sala, comunicação, gamificação e inclusão. 1ª edição (15/10/2025-28/01/2026). Kadoo + Oxygeni Hub.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/kadoo-educacao-tech-front.pdf"
+        }
+      ]
+    },
+    {
+      "id": "psinergia",
+      "title": "Psinergia em ação - A magia da comunicação",
+      "institution": "Psinergia",
+      "hours": null,
+      "category": "evento",
+      "featured": false,
+      "priority": 58,
+      "description": "Intervenção Psinergia - melhor atuação. Colaborador: comunicação.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/psinergia-front.pdf"
+        }
+      ]
+    },
+    {
+      "id": "adobe-premiere",
+      "title": "Dominando o Adobe Premiere Pro",
+      "institution": "São Luís Coworking",
+      "hours": 8,
+      "category": "curso",
+      "featured": false,
+      "priority": 56,
+      "description": "Workshop de edição de vídeo. 8h. 09/04/2022.",
+      "files": [
+        {
+          "label": "PDF",
+          "path": "/certificates/adobe-premiere-front.pdf"
+        }
+      ]
+    },
+    {
       "id": "informatica-basica-datacontrol",
-      "title": "Informática Básica · Capacitação Administrativa",
+      "title": "Informática Básica - Capacitação Administrativa",
       "institution": "Datacontrol",
       "hours": 120,
       "category": "curso",
       "featured": false,
       "priority": 12,
-      "description": "Curso Datacontrol Educação e Tecnologia. Módulos Windows, Internet, Photoshop, PowerPoint, Word e Excel. Carga horária de 120h (2017–2018).",
+      "description": "Curso Datacontrol Educação e Tecnologia. Módulos Windows, Internet, Photoshop, PowerPoint, Word e Excel. Carga horária de 120h (2017-2018).",
       "files": [
         {
           "label": "Frente",
@@ -439,6 +559,86 @@
         {
           "label": "Verso",
           "path": "/certificates/tecnico-internet-senac-back-v3.pdf"
+        }
+      ]
+    },
+    {
+      "id": "programador-web-senac",
+      "title": "Programador Web",
+      "institution": "Senac",
+      "hours": 240,
+      "category": "formacao",
+      "featured": true,
+      "priority": 6,
+      "description": "Qualificação profissional Senac. Carga horária de 240h (10/08/2022-15/02/2023). Nº 4684.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/programador-web-senac-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/programador-web-senac-back.pdf"
+        }
+      ]
+    },
+    {
+      "id": "programador-sistemas-senac",
+      "title": "Programador de Sistemas",
+      "institution": "Senac",
+      "hours": 200,
+      "category": "formacao",
+      "featured": true,
+      "priority": 7,
+      "description": "Qualificação profissional Senac. Carga horária de 200h (25/05/2022-17/08/2022). Nº 632566.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/programador-sistemas-senac-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/programador-sistemas-senac-back.pdf"
+        }
+      ]
+    },
+    {
+      "id": "webdesigner-senac",
+      "title": "Webdesigner",
+      "institution": "Senac",
+      "hours": 160,
+      "category": "formacao",
+      "featured": false,
+      "priority": 8,
+      "description": "Qualificação profissional Senac. Carga horária de 160h (20/09/2021-07/12/2021). Nº 618232.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/webdesigner-senac-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/webdesigner-senac-back.pdf"
+        }
+      ]
+    },
+    {
+      "id": "lightroom-senac",
+      "title": "Introdução ao tratamento de imagem com Lightroom",
+      "institution": "Senac",
+      "hours": 4,
+      "category": "curso",
+      "featured": false,
+      "priority": 55,
+      "description": "Workshop Senac. Carga horária de 4h (29/09/2021). Nº 615618.",
+      "files": [
+        {
+          "label": "Frente",
+          "path": "/certificates/lightroom-senac-front.pdf"
+        },
+        {
+          "label": "Verso",
+          "path": "/certificates/lightroom-senac-back.pdf"
         }
       ]
     },

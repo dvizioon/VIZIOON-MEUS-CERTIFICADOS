@@ -1045,7 +1045,7 @@ const CircularCarousel = ({
           </span>
           <span className="circular-carousel__count">
             <Digits value={active + 1} />
-            <span className="circular-carousel__slash"> · </span>
+            <span className="circular-carousel__slash"> - </span>
             <span>{String(count).padStart(2, "0")}</span>
           </span>
         </div>

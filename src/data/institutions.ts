@@ -16,6 +16,38 @@ export const INSTITUTIONS: Institution[] = [
     order: 1,
   },
   {
+    id: "educacao-basica",
+    name: "Educação básica",
+    match: [
+      "CE Liceu Maranhense",
+      "UEB Professor Carlos Saads",
+      "UEB Raimundo Chaves",
+    ],
+    logos: ["/logos/graduacao.svg"],
+    order: 1.2,
+  },
+  {
+    id: "kadoo",
+    name: "Kadoo",
+    match: ["Kadoo"],
+    logos: ["/logos/outros.svg"],
+    order: 2.5,
+  },
+  {
+    id: "psinergia",
+    name: "Psinergia",
+    match: ["Psinergia"],
+    logos: ["/logos/outros.svg"],
+    order: 8.5,
+  },
+  {
+    id: "slz-coworking",
+    name: "São Luís Coworking",
+    match: ["São Luís Coworking"],
+    logos: ["/logos/outros.svg"],
+    order: 8.6,
+  },
+  {
     id: "utfpr",
     name: "UTFPR",
     match: ["UTFPR"],
